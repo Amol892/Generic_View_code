@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Update page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class='container'>
+        <h1>Delete Confirmation !!</h1><hr>
+        <form method='post'>
+            {% csrf_token %}
+
+            <h3>Are you want to delete records</h3>
+
+            <input type='submit' value='Delete Movie' class='btn btn-success col-4'>
+            <button><a href={% url 'home_url' %}>No</a></button>
+        </form>
+        <a href={% url 'home_url' %}><button class='btn btn-danger col-4'>No</button></a>
+    </div>
+{% endblock %}
